@@ -1,0 +1,5 @@
+📘 EduPress Store is an all-in-one campus solution combining a stationery e-commerce system with a smart print-on-demand service—eliminating long queues and guesswork at university print shops. Designed for students, the platform allows users to easily browse and purchase supplies, upload print documents (PDF/DOCX), select between colour or black-and-white printing, view real-time pricing, pay online, and simply pick up once their order is marked “ready”.
+
+Built on the XAMPP stack (Apache, PHP, MySQL), the system runs entirely offline/local for quick deployment. The front end is built with lightweight HTML/CSS/PHP, while vanilla JavaScript powers dynamic functionality like price previews, upload validation, and cart updates—ensuring optimal speed without extra dependencies.
+
+On the backend, the data model uses five normalized InnoDB tables (users, products, print_jobs, orders, order_items) to efficiently handle user data, inventory, and hybrid carts combining stationery and print jobs. Secure practices like password hashing are implemented to safeguard user credentials.
