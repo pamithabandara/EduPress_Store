@@ -1,0 +1,1150 @@
+/* Disable on small screens */
+@media (max-width: 768px) {
+  body::before {
+    display: none;
+  }
+}
+
+/* 1. Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* 2. Color Palette */
+:root {
+  --primary: #005fa3;
+  --accent: #007bff;
+  --light-bg: #eef6fc;
+  --bg: #f9fbfd;
+  --text: #333;
+  --muted: #555;
+  --border: #dde7f0;
+}
+/* 4. Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary);
+}
+.btn-secondary {
+  background: #fff;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* 6. Hero Banner */
+.hero {
+  position: relative;
+  background: url('/edupress/images/hero.jpg') center/cover no-repeat;
+  height: 500px;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,95,163,0.6);
+}
+.hero-content {
+  position: relative; text-align: center; color: #fff;
+  max-width: 600px; padding: 0 1em;
+}
+.hero-content h1 {
+  font-size: 3em; margin-bottom: 0.5em; font-weight: 600;
+}
+.hero-content p {
+  font-size: 1.2em; margin-bottom: 1em;
+}
+
+/* 7. Categories */
+.categories {
+  text-align: center; margin: 3em 0 2em;
+}
+.categories h2 {
+  color: var(--primary); margin-bottom: 1em;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+  gap: 1em;
+}
+.category-card {
+  background: var(--light);
+  padding: 1em;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  display: flex; flex-direction: column; align-items: center;
+}
+.category-card img {
+  width: 50px; height: 50px; margin-bottom: 0.5em;
+}
+.category-card span {
+  font-weight: 500; color: var(--text);
+}
+.category-card:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* 8. Featured Products */
+.featured h2 {
+  text-align: center; color: var(--primary);
+  margin: 2em 0 1em;
+}
+
+
+
+/* 3. Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth; /* smooth scrolling */
+  cursor: url('images/custom-cursor.png'), auto; /* custom cursor */
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 4. Header & Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ecf3f3;
+  border-bottom: 1px solid var(--border);
+  padding: 1em 0;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo a {
+  font-size: 1.8em;
+  color: var(--primary);
+  font-weight: 600;
+}
+.main-nav {
+  display: flex;
+  gap: 1em;
+}
+.main-nav a {
+  color: var(--text);
+  padding: 0.5em 0.75em;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+.main-nav a:hover {
+  background: var(--light-bg);
+  color: var(--primary);
+}
+
+/* 5. Search Form */
+.search-form {
+  display: flex;
+  max-width: 400px;
+  margin: 1.5em auto;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.search-form input {
+  flex: 1;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+}
+.search-form button {
+  padding: 0 1em;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.search-form button:hover {
+  background: var(--primary);
+}
+
+/* 6. Welcome Section */
+.welcome {
+  text-align: center;
+  padding: 3em 1em;
+  background: var(--light-bg);
+  border-radius: 8px;
+  margin: 2em 0;
+}
+.welcome h2 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+}
+
+/* 7. Filter Bar & Dropdown */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0.75em 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1.5em;
+}
+.filter-bar .filters {
+  display: flex;
+  gap: 1em;
+}
+.filter-bar select {
+  appearance: none;
+  padding: 0.6em 1em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: url('images/arrow-down.svg') no-repeat right 0.8em center;
+  background-size: 1em;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.filter-bar select:focus {
+  border-color: var(--accent);
+}
+.filter-bar .product-count {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* 8. Product Grid & Cards */
+.shop h2 {
+  text-align: center;
+  color: var(--primary);
+  margin: 1.5em 0 1em;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 1.5em;
+
+    /* break out of the 90% container and flush to the viewport’s left edge */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-left: 24.5em; /* optional breathing room from the viewport edge */
+  padding-right: 24.5em;
+}
+/* ────────────────────────────────────────────────
+   Align buttons across all product-card layouts
+   Works on Shop (no .product-info) and Home pages
+   ──────────────────────────────────────────────── */
+
+/* 1) Make each card a flex-column container */
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2) Clamp the title (<h3>) to 2 lines */
+.product-card h3 {
+  line-height: 1.2;
+  max-height: 2.4em;            /* 2 × 1.2em */
+  margin: 0.75em 1em 0.5em;     /* top/right/ bottom spacing */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 3) Ensure the price <p> just sits below the title */
+.product-card .price {
+  margin: 0 1em 0.75em;
+}
+
+/* 4) Push the button down to the bottom */
+.product-card button {
+  margin: auto 1em 1em;         /* top auto = push down, right/left, bottom */
+  /* reuse your existing fancy button styles here: */
+  position: relative;
+  overflow: hidden;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .2s, box-shadow .2s, background .3s;
+}
+
+/* Hover / focus / ripple you already have… */
+.product-card button:hover { transform: translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.product-card button:focus { outline:none; box-shadow:0 0 0 3px rgba(0,95,163,0.5); }
+.product-card button::after { /* …ripple… */ }
+.product-card button:active::after { /* …ripple… */ }
+
+
+/* 3) Push the button down so all buttons line up */
+.product-card .product-info button {
+  margin-top: auto;
+}
+
+
+/* 3) Push the button to the bottom of its flex column */
+.product-card .product-info button {
+  margin-top: auto;
+}
+
+.product-card:hover {
+  transform: perspective(1000px) rotateY(6deg) rotateX(3deg) translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+/* Force all product images into a uniform box */
+.product-card img {
+  width: 100%;           /* fill the card’s width */
+  height: 220px;         /* pick a consistent height */
+  object-fit: cover;     /* crop/scale to fill without distortion */
+  object-position: center; /* keep the center of the image in view */
+  border-bottom: 1px solid var(--border);
+  border-radius: 4px 4px 0 0; /* round the top corners to match the card */
+}
+/* ───────────────────────────────────────
+   Apply Add-to-Cart styles in Shop as well
+   ─────────────────────────────────────── */
+.product-card button {
+  position: relative;
+  overflow: hidden;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease;
+}
+.product-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.product-card button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 95, 163, 0.5);
+}
+/* ripple effect */
+.product-card button::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.8s ease;
+  opacity: 1;
+  pointer-events: none;
+}
+.product-card button:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+}
+
+.product-info {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.product-info h3 {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  color: var(--text);
+}
+.product-info .price {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1em;
+}
+/* ========== Stylish Add-to-Cart Buttons ========== */
+.product-info button {
+  position: relative;
+  overflow: hidden;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease;
+}
+
+/* Subtle hover lift + stronger shadow */
+.product-info button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus ring for accessibility */
+.product-info button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 95, 163, 0.5);
+}
+
+/* Ripple effect on click */
+.product-info button::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.8s ease;
+  opacity: 1;
+  pointer-events: none;
+}
+.product-info button:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+}
+
+/* Optional: make the text a little tighter */
+.product-info button span {
+  letter-spacing: 0.5px;
+}
+
+
+/* 9. Cart & Tables */
+.cart {
+  margin: 2em auto;
+  max-width: 800px;
+}
+.cart h3 {
+  color: var(--primary);
+  margin: 1em 0 0.5em;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1.5em;
+}
+th {
+  background: var(--light-bg);
+  color: var(--primary);
+  text-align: left;
+  padding: 0.75em;
+}
+td {
+  padding: 0.75em;
+  border-bottom: 1px solid var(--bg);
+}
+tfoot td {
+  background: #fafafa;
+  font-weight: 600;
+}
+#checkout-btn {
+  display: block;
+  width: 220px;
+  margin: 1em auto;
+  padding: 0.8em;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#checkout-btn:hover {
+  background: var(--primary);
+}
+
+/* 10. Forms & Inputs */
+input, select, textarea {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 1em;
+  transition: border-color 0.3s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+}
+
+/* 11. Auth Forms */
+.auth-form {
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin: 2em auto;
+  max-width: 400px;
+}
+.auth-form h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1em;
+}
+.auth-form button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.auth-form button:hover {
+  background: var(--primary);
+}
+.auth-form .error {
+  color: #c00;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* 12. Checkout Page */
+.checkout {
+  margin: 2em auto;
+  max-width: 500px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.checkout h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1em;
+}
+.checkout button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.checkout button:hover {
+  background: var(--primary);
+}
+
+/* 13. Thank You Page */
+.thanks {
+  text-align: center;
+  margin: 2em auto;
+  max-width: 600px;
+}
+.thanks h2 {
+  color: var(--primary);
+  margin-bottom: 0.5em;
+}
+.thanks a {
+  display: inline-block;
+  margin-top: 1em;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.thanks a:hover {
+  background: var(--primary);
+}
+
+/* 14. Product Detail */
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em auto;
+  max-width: 900px;
+}
+.detail-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.detail-info h2 {
+  color: var(--primary);
+  margin-bottom: 0.5em;
+}
+.detail-info .price {
+  font-size: 1.4em;
+  color: var(--accent);
+  margin-bottom: 1em;
+}
+.detail-info button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8em 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.detail-info button:hover {
+  background: var(--primary);
+}
+
+/* 15. Admin */
+.admin-orders, .admin-print-jobs, .admin-add {
+  margin: 2em auto;
+  max-width: 900px;
+}
+.admin-add form {
+  background: #fff;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.admin-add button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.admin-add button:hover {
+  background: var(--primary);
+}
+
+/* 16. Print Upload */
+.print-upload {
+  margin: 2em auto;
+  max-width: 500px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.print-upload h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1em;
+}
+.print-upload button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.print-upload button:hover {
+  background: var(--primary);
+}
+
+/* 17. Payment Gateway */
+.payment-gateway {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: var(--light-bg);
+}
+.payment-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2em;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.payment-card h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.payment-card p {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: var(--muted);
+}
+.payment-card .field {
+  margin-bottom: 1em;
+}
+.payment-card .field label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: 500;
+  color: var(--text);
+}
+.payment-card input {
+  width: 100%;
+  padding: 0.6em;
+  font-size: 1em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.payment-card input:focus {
+  border-color: var(--accent);
+}
+.payment-card .field-row {
+  display: flex;
+  gap: 1em;
+}
+.payment-card .field-row .field {
+  flex: 1;
+}
+.payment-card button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.payment-card button:hover {
+  background: var(--primary);
+}
+
+/* 18. Modal (CSS‐only) */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  z-index: 2000;
+}
+.modal:target {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  width: 100%; max-width: 400px;
+  padding: 2em;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.modal-close {
+  position: absolute;
+  top: 0.5em; right: 0.5em;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: var(--text);
+}
+
+/* 19. Back-to-Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2em; right: 2em;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.8em;
+  border-radius: 50%;
+  text-align: center;
+  display: none; /* toggle .visible via JS */
+  transition: background 0.3s;
+  z-index: 1500;
+}
+.back-to-top.visible {
+  display: block;
+}
+.back-to-top:hover {
+  background: var(--primary);
+}
+
+/* 20. Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light-bg);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+/* ----------------------------------------
+   Home Page Styles (merge into your style.css)
+   ---------------------------------------- */
+
+/* Hero Banner */
+.hero {
+  position: relative;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,95,163,0.6);
+}
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  padding: 0 1em;
+}
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.btn {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #005fa3;
+}
+.btn-secondary {
+  background: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+.btn-secondary:hover {
+  background: #007bff;
+  color: #fff;
+}
+/* Hero Banner */
+.hero {
+  position: relative;
+  background: url('/edupress/images/hero.jpg') center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,95,163,0.6);
+}
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  padding: 0 1em;
+}
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background: #005fa3;
+}
+
+/* Categories */
+.categories {
+  text-align: center;
+  margin: 3em 0 2em;
+}
+.categories h2 {
+  color: #005fa3;
+  margin-bottom: 1em;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+  gap: 1em;
+}
+.category-card {
+  background: #eef6fc;
+  padding: 1em;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+  color: #005fa3;
+}
+.category-card:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-5px);
+}
+.category-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5em;
+}
+
+/* Featured Products (reuses existing grid styles) */
+.featured h2 {
+  text-align: center;
+  color: #005fa3;
+  margin: 2em 0 1em;
+}
+
+/* Promotional Banners */
+.promo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 3em 0;
+}
+.promo-card {
+  position: relative;
+  flex: 1;
+  min-height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.promo-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fafafa;
+
+}
+.promo-content h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  background-color: rgba(12, 4, 82, 0.4);
+}
+.promo-content .btn-secondary {
+  font-size: 0.9em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.2em; }
+  .promo { flex-direction: column; }
+}
+/* ─────────────────────────────────────────────────
+   Simplified Footer: contact left, video right
+   ───────────────────────────────────────────────── */
+
+.footer-top {
+  background: var(--primary); /* your blue */
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;     /* so it stacks on very narrow screens */
+}
+
+.footer-contact {
+  flex: 1 1 300px;     /* min-width 300px, grow to fill */
+}
+.footer-contact h4 {
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+.footer-contact p {
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+  opacity: 0.9;
+}
+
+/* ─────────────────────────────────────────────────
+   Footer: Logo centered, contact+map left, video right
+   ───────────────────────────────────────────────── */
+
+.footer-top {
+  position: relative;
+  background: var(--primary);
+  color: #fff;
+  padding: 5rem 0 2rem;    /* extra top padding for logo */
+}
+
+.footer-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  z-index: 2;
+}
+.footer-logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* Flex container for Contact/Map + Video */
+.footer-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Left: contact + map */
+.footer-contact {
+  flex: 1 1 300px;
+}
+.footer-contact h4 {
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+.footer-contact p {
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+  opacity: 0.9;
+}
+.footer-map {
+  margin-top: 1rem;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.footer-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Right: video */
+.footer-video {
+  flex: 1 1 300px;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+}
+.footer-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  background: #f0f0f0;
+  padding: 1rem 0;
+  text-align: center;
+}
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.back-to-top {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  font-size: 1.2em;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem; top: -1.5rem;
+  transition: background 0.2s;
+}
+.back-to-top:hover {
+  background: #005fa3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-map {
+    height: 180px;
+  }
+  .footer-video {
+    width: 100%;
+    max-width: none;
+  }
+}
+main.container {
+  padding-bottom: 4rem;
+}
